@@ -39,6 +39,8 @@ def email():
           
             print("#################")
             print(mensajito["mensaje"])
+            print(mensajito["codigo"])
+
             
             try:
                 sg = SendGridAPIClient(os.environ.get("SENDGRID_API_KEY"))
@@ -58,7 +60,7 @@ def email():
                 elif subject == "Recuperacion de Contraseña":
                     mensaje.template_id = os.environ.get(
                         "IDPLANTILLARECUPERARCONTRASENA")
-                elif subject == " Cambio de Contraseña":
+                elif subject == "Cambio de Contraseña":
                     mensaje.template_id = os.environ.get(
                         "IDPLANTILLACAMBIOCONTRASENA")
 

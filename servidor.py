@@ -63,6 +63,9 @@ def email():
                 elif subject == "Cambio de Contraseña":
                     mensaje.template_id = os.environ.get(
                         "IDPLANTILLACAMBIOCONTRASENA")
+                elif subject == "Registro de usuario":
+                    mensaje.template_id = os.environ.get(
+                        "IDPLANTILLABIENVENIDA")
 
                 respuesta = sg.send(mensaje)
                 print(respuesta.status_code)
